@@ -1,13 +1,14 @@
-import java.util.function.Function;
+import java.util.List;
 
 public class PasswordChecker {
-    private Function<String, Boolean> rule;
 
-    public PasswordChecker(Function<String, Boolean> rule) {
-        this.rule = rule;
+    private List<Rule> rules;
+
+    public PasswordChecker(List<Rule> rules) {
+        this.rules = rules;
     }
 
     public Boolean check(String password) {
-        return this.rule.apply(password);
+        return this.rules.stream().allMatch(rule -> rule.execute(password));
     }
 }
