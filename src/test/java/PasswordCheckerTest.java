@@ -7,6 +7,9 @@ public class PasswordCheckerTest {
     void shouldAcceptLongerThanEightChars() {
         assertThat(new PasswordChecker().check("abcdefhij")).isTrue();
     }
+
+
+
 }
 
 
