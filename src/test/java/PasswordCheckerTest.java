@@ -4,13 +4,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class PasswordCheckerTest {
     @Test
-    void shouldAcceptLongerThanEightChars() {
-        assertThat(new PasswordChecker().check("abcdefhij")).isTrue();
+    void shouldAcceptEightChars() {
+        assertThat(new PasswordChecker().check("12345678")).isTrue();
     }
 
     @Test
-    void shouldRejectShorterThanEightChars() {
-        assertThat(new PasswordChecker().check("abcdefhi")).isFalse();
+    void shouldRejectSevenChars() {
+        assertThat(new PasswordChecker().check("1234567")).isFalse();
     }
 }
 
