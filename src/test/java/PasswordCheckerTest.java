@@ -8,8 +8,10 @@ public class PasswordCheckerTest {
         assertThat(new PasswordChecker().check("abcdefhij")).isTrue();
     }
 
-
-
+    @Test
+    void shouldRejectShorterThanEightChars() {
+        assertThat(new PasswordChecker().check("abcdefhi")).isFalse();
+    }
 }
 
 

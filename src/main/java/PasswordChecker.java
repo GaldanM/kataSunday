@@ -1,5 +1,6 @@
 public class PasswordChecker {
     public boolean check(String password) {
-        return true;
+        if (password.length() > 8) return true;
+        return false;
     }
 }
